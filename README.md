@@ -195,7 +195,7 @@ start.bat
 ```bash
 python main.py
 ```
-
+#Captcha : @solvium_crypto_bot
 ### Interactive Menu
 
 The bot provides an interactive menu with the following options:
