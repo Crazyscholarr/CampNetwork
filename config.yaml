@@ -1,0 +1,97 @@
+# --------------------------- #
+# PHẦN CÀI ĐẶT
+# --------------------------- #
+SETTINGS:
+    # số luồng chạy đồng thời
+    THREADS: 1
+
+    # số lần thử lại cho MỌI hành động
+    ATTEMPTS: 5
+    
+    # phạm vi tài khoản.
+    # MẶC ĐỊNH: [0, 0] - tất cả tài khoản
+    # [3, 5] - chỉ tài khoản 3 4 5
+    # [7, 7] - chỉ tài khoản 7
+    ACCOUNTS_RANGE: [0, 0]
+    
+    # CHỈ HOẠT ĐỘNG NẾU ACCOUNTS_RANGE LÀ [0, 0]
+    # chỉ định chính xác tài khoản sử dụng.
+    # MẶC ĐỊNH: [] - tất cả tài khoản
+    # Ví dụ: [1, 4, 6] - bot chỉ dùng tài khoản 1, 4 và 6
+    EXACT_ACCOUNTS_TO_USE: []
+    
+    SHUFFLE_WALLETS: true
+
+    # tạm dừng giữa các lần thử lại
+    PAUSE_BETWEEN_ATTEMPTS: [5, 10]
+    
+    # tạm dừng giữa các lần swap
+    PAUSE_BETWEEN_SWAPS: [10, 20]
+    
+    # tạm dừng (giây) giữa các tài khoản
+    RANDOM_PAUSE_BETWEEN_ACCOUNTS: [10, 20]
+    
+    # tạm dừng (giây) giữa các hành động
+    RANDOM_PAUSE_BETWEEN_ACTIONS: [10, 20]
+    
+    # tạm dừng ngẫu nhiên trước khi bắt đầu mỗi tài khoản
+    # để đảm bảo các tài khoản bắt đầu vào thời điểm khác nhau
+    RANDOM_INITIALIZATION_PAUSE: [10, 50]
+    
+    # nếu true, bot sẽ gửi log lên telegram
+    SEND_TELEGRAM_LOGS: true
+    # nếu true, bot sẽ gửi thông báo lên telegram
+    # token bot telegram
+    TELEGRAM_BOT_TOKEN: "8129101711:AAEiFL8sxUQTt8o3brbaAKWgxy_S047CEys"
+    # id người dùng telegram
+    TELEGRAM_USERS_IDS: [1264273114]
+
+
+FLOW:
+    # nếu nhiệm vụ từ database thất bại, bot sẽ bỏ qua
+    # nếu false, bot sẽ dừng và báo lỗi
+    SKIP_FAILED_TASKS: true
+
+
+CAPTCHA:
+    SOLVIUM_API_KEY: "xxxxxxxxxxxxxxxx"
+
+
+LOYALTY:
+    REPLACE_FAILED_TWITTER_ACCOUNT: true
+    MAX_ATTEMPTS_TO_COMPLETE_QUEST: 15
+
+RPCS:
+    CAMP_NETWORK: ["https://rpc.basecamp.t.raas.gelato.cloud"]
+
+
+OTHERS:
+    SKIP_SSL_VERIFICATION: true
+    USE_PROXY_FOR_RPC: true
+  
+CRUSTY_SWAP:
+    NETWORKS_TO_REFUEL_FROM: ["Arbitrum", "Optimism", "Base"]
+    AMOUNT_TO_REFUEL: [0.0002, 0.0003]
+    MINIMUM_BALANCE_TO_REFUEL: 99999
+    WAIT_FOR_FUNDS_TO_ARRIVE: true
+    MAX_WAIT_TIME: 999999
+    BRIDGE_ALL: false
+    BRIDGE_ALL_MAX_AMOUNT: 0.01
+
+# --------------------------- #
+# PHẦN SÀN GIAO DỊCH
+# --------------------------- #
+EXCHANGES:
+    name: "OKX"  # Hỗ trợ: "OKX", "BITGET"
+    apiKey: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+    secretKey: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+    passphrase: 'xxxxxxx'  
+    withdrawals:
+        - currency: "ETH" # CHỈ ETH
+          networks: ["Arbitrum", "Optimism"] # ["Arbitrum", "Base", "Optimism"]
+          min_amount: 0.0004
+          max_amount: 0.0006
+          max_balance: 0.005
+          wait_for_funds: true
+          max_wait_time: 99999  # tính bằng giây
+          retries: 3
