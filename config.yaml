@@ -44,7 +44,7 @@ SETTINGS:
     # token bot telegram
     TELEGRAM_BOT_TOKEN: "8129101711:AAEiFL8sxUQTt8o3brbaAKWgxy_S047CEys"
     # id người dùng telegram
-    TELEGRAM_USERS_IDS: [1264273114]
+    TELEGRAM_USERS_IDS: []
 
 
 FLOW:
